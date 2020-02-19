@@ -1,0 +1,13 @@
+.Corn {
+    background: rgb(251,247,148);
+    background: linear-gradient(203deg, rgba(251,247,148,1) 18%, rgba(1,146,176,1) 85%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Corn .Message {
+    width: 30%;
+}

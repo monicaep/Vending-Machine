@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch, NavLink } from 'react-router-dom';
+import VendingMachine from './VendingMachine';
+import Corn from './Corn';
+import Boba from './Boba';
+import FreshTako from './FreshTako';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className='App-nav'>
+        <NavLink exact activeClassName='active-link' to='/'>Vending Machine</NavLink>
+        <NavLink exact activeClassName='active-link' to='/corn'>Corn</NavLink>
+        <NavLink exact activeClassName='active-link' to='/boba'>Boba</NavLink>
+        <NavLink exact activeClassName='active-link' to='/freshtako'>Fresh Tako</NavLink>
+      </nav>
+ 
+      <Switch>
+          <Route exact path='/' component={VendingMachine} />
+          <Route exact path='/corn' component={Corn} />
+          <Route exact path='/boba' component={Boba} />
+          <Route exact path='/freshtako' component={FreshTako} />
+      </Switch>      
     </div>
   );
 }
